@@ -8,7 +8,7 @@ mantisbt:
     - MYSQL_HOST=mariadb
   restart: always
   volumes:
-    - ./config_inc_addon.php:/srv/mantis/config/config_inc.php
+    - ./config_inc_addon.php:/var/www/html/config/config_inc.php
 
 mariadb:
   image: 'docker.io/bitnami/mariadb:10.3-debian-10'
@@ -18,5 +18,3 @@ mariadb:
     - MARIADB_DATABASE=bugtracker
     - MARIADB_PASSWORD=mantis
     - MARIA_ROOT_PASSWORD=root
-  volumes:
-      - 'mariadb_data:/bitnami/mariadb'
